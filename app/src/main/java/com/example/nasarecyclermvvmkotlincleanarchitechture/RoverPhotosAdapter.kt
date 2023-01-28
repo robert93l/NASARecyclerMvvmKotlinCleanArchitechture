@@ -10,12 +10,12 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.nasarecyclermvvmkotlincleanarchitechture.data.Photo
-import java.util.concurrent.TimeUnit
+
 
 class RoverPhotosAdapter() :
     PagingDataAdapter<Photo,RoverPhotosAdapter.ViewHolder>(DiffUtilCallBack()) {
 
-    private var photos = listOf<Photo>()
+   /* private var photos = listOf<Photo>()*/
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.rover_item_layout, parent, false)
         return ViewHolder(view)
@@ -62,6 +62,7 @@ class RoverPhotosAdapter() :
 
         override fun areContentsTheSame(oldItem: Photo, newItem: Photo): Boolean {
             return  oldItem.id == newItem.id
+                   /* oldItem.camera.id == oldItem.camera.id*/
 
         }
     }

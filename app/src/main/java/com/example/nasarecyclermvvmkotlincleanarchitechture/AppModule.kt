@@ -17,13 +17,15 @@ object AppModule {
     @Provides
     fun provideBaseUrl() = Constants.BASE_URL
 
-
+    val gson = GsonBuilder()
+        .setLenient()
+        .create()
     @Provides
     @Singleton
     fun provideRetrofitInstance(BASE_URL: String): ApiServiceMars =
         Retrofit.Builder()
             .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
             .create(ApiServiceMars::class.java)
 }
