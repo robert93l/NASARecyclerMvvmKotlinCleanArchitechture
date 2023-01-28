@@ -3,9 +3,11 @@ package com.example.nasarecyclermvvmkotlincleanarchitechture
 import com.example.nasarecyclermvvmkotlincleanarchitechture.data.photosreponse
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Headers
 import retrofit2.http.Query
 
 interface ApiServiceMars {
+
 
 
     @GET("mars-photos/api/v1/rovers/curiosity/photos")

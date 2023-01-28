@@ -1,19 +1,21 @@
 package com.example.nasarecyclermvvmkotlincleanarchitechture
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.nasarecyclermvvmkotlincleanarchitechture.data.Photo
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.cachedIn
+
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.launch
+
 import javax.inject.Inject
 
 
 @HiltViewModel
-class RoverViewModel @Inject constructor(private val repository: MarsRepository) : ViewModel() {
+class RoverViewModel @Inject constructor(private val moviesApiServiceMars: ApiServiceMars) : ViewModel() {
 
-    private val _photos = MutableLiveData<List<Photo>>()
+  /*  private val _photos = MutableLiveData<List<Photo>>()
     val photos: LiveData<List<Photo>>
         get() = _photos
 
@@ -24,5 +26,8 @@ class RoverViewModel @Inject constructor(private val repository: MarsRepository)
                 _photos.value = result.data.photos
             }
         }
-    }
+    }*/
+    val marsphotos = Pager(PagingConfig(pageSize = 10)) {
+        MoviePagingSource(moviesApiServiceMars)
+    }.flow.cachedIn(viewModelScope)
 }
