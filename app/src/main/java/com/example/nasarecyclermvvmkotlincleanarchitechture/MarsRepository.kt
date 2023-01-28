@@ -1,5 +1,4 @@
 package com.example.nasarecyclermvvmkotlincleanarchitechture
-
 import com.example.nasarecyclermvvmkotlincleanarchitechture.data.photosreponse
 import javax.inject.Inject
 

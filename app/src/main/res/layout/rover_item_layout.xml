@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:src="@drawable/ic_launcher_background"
-        android:scaleType="centerCrop" />
+        android:padding="2dp"
+        />
 
 </LinearLayout>
