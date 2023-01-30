@@ -3,6 +3,7 @@ package com.example.nasarecyclermvvmkotlincleanarchitechture
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
@@ -24,6 +25,17 @@ class MainActivity : AppCompatActivity() {
 
         setUpRv()
         setUpViewModel()
+        refreshswipe()
+    }
+
+    private fun refreshswipe() {
+        binding.swiperefresh.setOnRefreshListener {
+
+            setUpRv()
+            setUpViewModel()
+
+            binding.swiperefresh.isRefreshing = false
+        }
     }
 
     private fun setUpRv() {
@@ -34,16 +46,10 @@ class MainActivity : AppCompatActivity() {
         layoutManager = StaggeredGridLayoutManager(2, GridLayoutManager.VERTICAL)
             setHasFixedSize(true)
         }
-      /*  binding.recyclerviewMars.layoutManager = StaggeredGridLayoutManager(2, GridLayoutManager.VERTICAL)
-        binding.recyclerviewMars.adapter = adaptermars*/
+
     }
 
     private fun setUpViewModel() {
-
-        /*viewModel.getPhotos(1000,1,Constants.API_KEY)
-        viewModel.photos.observe(this, Observer { photoslist ->
-            adaptermars.updatePhotos(photoslist)*/
-
 
             lifecycleScope.launch {
                 viewModel.marsphotos.collect {
@@ -52,7 +58,5 @@ class MainActivity : AppCompatActivity() {
                     adaptermars.submitData(it)
                 }
             }
-
-
         }
     }
