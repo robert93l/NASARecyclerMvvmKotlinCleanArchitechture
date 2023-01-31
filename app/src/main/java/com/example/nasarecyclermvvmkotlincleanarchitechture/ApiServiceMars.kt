@@ -8,8 +8,6 @@ import retrofit2.http.Query
 
 interface ApiServiceMars {
 
-
-
     @GET("mars-photos/api/v1/rovers/curiosity/photos")
     suspend fun getMarsPhotos(
         @Query("sol") sol: Int ,

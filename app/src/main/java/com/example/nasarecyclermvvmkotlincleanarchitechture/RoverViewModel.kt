@@ -27,7 +27,7 @@ class RoverViewModel @Inject constructor(private val moviesApiServiceMars: ApiSe
             }
         }
     }*/
-    val marsphotos = Pager(PagingConfig(pageSize = 10)) {
+    val marsphotos = Pager(PagingConfig(pageSize = 20, prefetchDistance =50,)) {
         MoviePagingSource(moviesApiServiceMars)
     }.flow.cachedIn(viewModelScope)
 }
