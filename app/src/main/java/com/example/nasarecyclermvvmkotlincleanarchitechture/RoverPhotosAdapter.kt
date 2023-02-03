@@ -29,7 +29,7 @@ class RoverPhotosAdapter() :
        /* holder.bind(photos[position])*/
     }
 
- /*   override fun getItemCount(): Int {
+/*    override fun getItemCount(): Int {
         return photos.size
     }*/
 
@@ -37,11 +37,11 @@ class RoverPhotosAdapter() :
         photos = newPhotos
         notifyDataSetChanged()
 
-       *//* fun submitList(launches1: List<Launch>) {
+         fun submitList(launches1: List<Launch>) {
             launches.clear()
             launches.addAll(launches1)
             notifyDataSetChanged()
-        }*//*
+        }
     }*/
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

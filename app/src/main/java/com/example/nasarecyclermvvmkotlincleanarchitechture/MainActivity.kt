@@ -30,16 +30,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun refreshswipe() {
         binding.swiperefresh.setOnRefreshListener {
-
             setUpRv()
             setUpViewModel()
-
             binding.swiperefresh.isRefreshing = false
         }
     }
 
     private fun setUpRv() {
-
         adaptermars = RoverPhotosAdapter()
         binding.recyclerviewMars.apply {
         adapter =adaptermars
@@ -53,8 +50,7 @@ class MainActivity : AppCompatActivity() {
 
             lifecycleScope.launch {
                 viewModel.marsphotos.collect {
-
-                    Log.d("aaa", "load: $it")
+                    Log.d("aaa", "Data Loaded: $it")
                     adaptermars.submitData(it)
                 }
             }
