@@ -1,4 +1,4 @@
-package com.example.nasarecyclermvvmkotlincleanarchitechture
+package com.example.nasarecyclermvvmkotlincleanarchitechture.ui
 
 
 import android.view.LayoutInflater
@@ -9,11 +9,12 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.nasarecyclermvvmkotlincleanarchitechture.R
 import com.example.nasarecyclermvvmkotlincleanarchitechture.data.Photo
 
 
 class RoverPhotosAdapter() :
-    PagingDataAdapter<Photo,RoverPhotosAdapter.ViewHolder>(DiffUtilCallBack()) {
+    PagingDataAdapter<Photo, RoverPhotosAdapter.ViewHolder>(DiffUtilCallBack()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.rover_item_layout, parent, false)

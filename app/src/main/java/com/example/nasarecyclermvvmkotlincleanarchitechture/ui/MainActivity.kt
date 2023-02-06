@@ -1,9 +1,8 @@
-package com.example.nasarecyclermvvmkotlincleanarchitechture
+package com.example.nasarecyclermvvmkotlincleanarchitechture.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager

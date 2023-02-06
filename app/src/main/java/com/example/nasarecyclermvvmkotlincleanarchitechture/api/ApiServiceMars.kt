@@ -1,9 +1,9 @@
-package com.example.nasarecyclermvvmkotlincleanarchitechture
+package com.example.nasarecyclermvvmkotlincleanarchitechture.api
 
+import com.example.nasarecyclermvvmkotlincleanarchitechture.utils.Constants
 import com.example.nasarecyclermvvmkotlincleanarchitechture.data.photosreponse
 import retrofit2.Response
 import retrofit2.http.GET
-import retrofit2.http.Headers
 import retrofit2.http.Query
 
 interface ApiServiceMars {

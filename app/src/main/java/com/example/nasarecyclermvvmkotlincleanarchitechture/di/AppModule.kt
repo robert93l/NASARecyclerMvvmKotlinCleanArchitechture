@@ -1,5 +1,7 @@
-package com.example.nasarecyclermvvmkotlincleanarchitechture
+package com.example.nasarecyclermvvmkotlincleanarchitechture.di
 
+import com.example.nasarecyclermvvmkotlincleanarchitechture.utils.Constants
+import com.example.nasarecyclermvvmkotlincleanarchitechture.api.ApiServiceMars
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
