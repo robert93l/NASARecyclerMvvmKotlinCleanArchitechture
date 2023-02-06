@@ -15,18 +15,6 @@ import javax.inject.Inject
 @HiltViewModel
 class RoverViewModel @Inject constructor(private val moviesApiServiceMars: ApiServiceMars) : ViewModel() {
 
-  /*  private val _photos = MutableLiveData<List<Photo>>()
-    val photos: LiveData<List<Photo>>
-        get() = _photos
-
-    fun getPhotos(sol: Int,page:Int, apikey: String) {
-        viewModelScope.launch {
-            val result = repository.getPhotos(sol, page,apikey)
-            if (result is Result.Success) {
-                _photos.value = result.data.photos
-            }
-        }
-    }*/
     val marsphotos = Pager(PagingConfig(pageSize = 20, prefetchDistance =50,)) {
         MoviePagingSource(moviesApiServiceMars)
     }.flow.cachedIn(viewModelScope)

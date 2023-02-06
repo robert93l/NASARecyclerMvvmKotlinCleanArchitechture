@@ -15,7 +15,6 @@ import com.example.nasarecyclermvvmkotlincleanarchitechture.data.Photo
 class RoverPhotosAdapter() :
     PagingDataAdapter<Photo,RoverPhotosAdapter.ViewHolder>(DiffUtilCallBack()) {
 
-   /* private var photos = listOf<Photo>()*/
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.rover_item_layout, parent, false)
         return ViewHolder(view)
@@ -26,23 +25,9 @@ class RoverPhotosAdapter() :
         if (item != null) {
             holder.bind(item)
         }
-       /* holder.bind(photos[position])*/
+
     }
 
-/*    override fun getItemCount(): Int {
-        return photos.size
-    }*/
-
-/*    fun updatePhotos(newPhotos: List<Photo>) {
-        photos = newPhotos
-        notifyDataSetChanged()
-
-         fun submitList(launches1: List<Launch>) {
-            launches.clear()
-            launches.addAll(launches1)
-            notifyDataSetChanged()
-        }
-    }*/
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val ivPhoto: ImageView = itemView.findViewById(R.id.iv_photo)
@@ -62,7 +47,6 @@ class RoverPhotosAdapter() :
 
         override fun areContentsTheSame(oldItem: Photo, newItem: Photo): Boolean {
             return  oldItem.id == newItem.id
-                   /* oldItem.camera.id == oldItem.camera.id*/
 
         }
     }

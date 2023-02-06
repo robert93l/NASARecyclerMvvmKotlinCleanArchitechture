@@ -43,7 +43,6 @@ class MainActivity : AppCompatActivity() {
         layoutManager = StaggeredGridLayoutManager(2, GridLayoutManager.VERTICAL)
             setHasFixedSize(true)
         }
-
     }
 
     private fun setUpViewModel() {
