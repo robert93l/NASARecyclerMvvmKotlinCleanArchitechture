@@ -24,39 +24,56 @@
             />
 
         <TextView
+            android:layout_marginTop="10dp"
             android:id="@+id/camera_name"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textStyle="bold|italic">
 
         </TextView>
+
+
         <TextView
             android:id="@+id/earth_date"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textStyle="bold">
 
         </TextView>
 
         <TextView
             android:id="@+id/rover_name"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textStyle="bold">
         </TextView>
         <TextView
             android:id="@+id/landing_date"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textStyle="bold">
 
         </TextView>
         <TextView
             android:id="@+id/launch_date"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textStyle="bold">
 
         </TextView>
         <TextView
             android:id="@+id/status"
-            android:text="status"
             android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/urk_link"
+            android:textStyle="bold"
+            android:autoLink="web"
+            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
