@@ -1,5 +1,6 @@
 package com.example.nasarecyclermvvmkotlincleanarchitechture.ui
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
             binding.swiperefresh.isRefreshing = false
         }
     }
+
 
     private fun setUpRv() {
         adaptermars = RoverPhotosAdapter()
