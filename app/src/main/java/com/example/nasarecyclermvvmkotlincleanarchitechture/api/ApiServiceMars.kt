@@ -1,5 +1,8 @@
 package com.example.nasarecyclermvvmkotlincleanarchitechture.api
 
+import com.example.nasarecyclermvvmkotlincleanarchitechture.data.nasa.Item
+import com.example.nasarecyclermvvmkotlincleanarchitechture.data.nasa.LinkX
+import com.example.nasarecyclermvvmkotlincleanarchitechture.data.nasa.NasaReponse
 import com.example.nasarecyclermvvmkotlincleanarchitechture.utils.Constants
 import com.example.nasarecyclermvvmkotlincleanarchitechture.data.photosreponse
 import retrofit2.Response
@@ -15,4 +18,14 @@ interface ApiServiceMars {
         @Query("api_key") apiKey: String = Constants.API_KEY
 
     ): Response<photosreponse>
+
+    @GET("search")
+    suspend fun getSearchNasapictures(
+        @Query("q") querysearch: String,
+        @Query("page") page: Int?,
+        @Query("media_type") media: String = Constants.IMAGE
+    ):Response<NasaReponse>
+
+
+
 }

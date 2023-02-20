@@ -10,7 +10,7 @@ import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
 
-class MoviePagingSource @Inject constructor(
+class MarsPagingSource @Inject constructor(
     private val movieService: ApiServiceMars,
 ) : PagingSource<Int, Photo>() {
     override fun getRefreshKey(state: PagingState<Int, Photo>): Int? {

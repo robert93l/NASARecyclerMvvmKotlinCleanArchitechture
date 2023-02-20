@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NASARecyclerMvvmKotlinCleanArchitechture</string>
+    <string name="searchNasa">search</string>
 </resources>
