@@ -1,10 +1,11 @@
 package com.example.nasarecyclermvvmkotlincleanarchitechture.ui
 
-import android.annotation.SuppressLint
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.lifecycleScope
@@ -31,13 +32,26 @@ class MainActivity : AppCompatActivity() {
         setUpViewModel()
 
         refreshswipe()
+        floatingButton()
+
+
+        }
+
+
+private fun floatingButton(){
+    binding.fabScrollTop.setOnClickListener {
+        binding.recyclerviewNasaSearch.scrollToPosition(0)
+        binding.recyclerviewMars.scrollToPosition(0)
     }
+}
 
     private fun refreshswipe() {
+
         binding.swiperefresh.setOnRefreshListener {
             setUpRv()
             setUpViewModel()
             binding.swiperefresh.isRefreshing = false
+
         }
     }
 
@@ -49,6 +63,7 @@ class MainActivity : AppCompatActivity() {
                 adapternasa.submitData(it)
             }
         }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -60,7 +75,6 @@ class MainActivity : AppCompatActivity() {
                 if (query != null) {
                     viewModel.searchNasaImages(query)
                     loadSearch()
-
                 }
                 return true
             }
@@ -92,13 +106,10 @@ class MainActivity : AppCompatActivity() {
             layoutManager = StaggeredGridLayoutManager(2, GridLayoutManager.VERTICAL)
             setHasFixedSize(true)
         }
-
-
     }
 
 
     private fun setUpViewModel() {
-
             lifecycleScope.launch {
                 viewModel.marsphotos.collect {
                     Log.d("aaa", "Data Loaded: $it")

@@ -8,6 +8,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.nasarecyclermvvmkotlincleanarchitechture.R
 import com.example.nasarecyclermvvmkotlincleanarchitechture.data.Photo
 import com.example.nasarecyclermvvmkotlincleanarchitechture.databinding.RoverItemLayoutBinding
 
@@ -58,6 +59,7 @@ class RoverPhotosAdapter() :
             Glide.with(binding.ivPhoto.context)
                 .load(photo.img_src)
                 .override(300, 300)
+                .placeholder(R.drawable.nasa)
                 .into(binding.ivPhoto)
 
             // Set the maximum number of lines to show for each text field

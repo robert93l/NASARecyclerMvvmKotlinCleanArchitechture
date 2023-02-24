@@ -11,10 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.nasarecyclermvvmkotlincleanarchitechture.R
 import com.example.nasarecyclermvvmkotlincleanarchitechture.data.nasa.Item
-import com.example.nasarecyclermvvmkotlincleanarchitechture.data.nasa.Link
-import com.example.nasarecyclermvvmkotlincleanarchitechture.data.nasa.LinkX
-import com.google.gson.Gson
-import java.net.URL
 
 
 class NasaAdapter() : PagingDataAdapter<Item, NasaAdapter.ViewHolder>(DiffUtilCallBack()) {
@@ -46,6 +42,7 @@ class NasaAdapter() : PagingDataAdapter<Item, NasaAdapter.ViewHolder>(DiffUtilCa
             Glide.with(imageNasa.context)
                 .load(imageUrl)
                 .override(300,300)
+                .placeholder(R.drawable.nasa)
                 .into(imageNasa)
 
         }
