@@ -4,7 +4,7 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.example.nasarecyclermvvmkotlincleanarchitechture.utils.Constants
 import com.example.nasarecyclermvvmkotlincleanarchitechture.api.ApiServiceMars
-import com.example.nasarecyclermvvmkotlincleanarchitechture.data.Photo
+import com.example.nasarecyclermvvmkotlincleanarchitechture.data.rovermars.Photo
 import com.example.nasarecyclermvvmkotlincleanarchitechture.utils.Constants.MOVIES_STARTING_PAGE_INDEX
 import retrofit2.HttpException
 import java.io.IOException

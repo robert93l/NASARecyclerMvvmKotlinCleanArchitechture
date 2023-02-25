@@ -1,4 +1,4 @@
-package com.example.nasarecyclermvvmkotlincleanarchitechture.data
+package com.example.nasarecyclermvvmkotlincleanarchitechture.data.rovermars
 
 data class Photo(
     val camera: Camera,

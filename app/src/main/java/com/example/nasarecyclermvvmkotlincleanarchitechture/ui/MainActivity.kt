@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
-import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.lifecycleScope
@@ -30,20 +29,17 @@ class MainActivity : AppCompatActivity() {
 
         setUpRv()
         setUpViewModel()
-
         refreshswipe()
-        floatingButton()
+        floatingButtonUp()
 
-
-        }
-
-
-private fun floatingButton(){
-    binding.fabScrollTop.setOnClickListener {
-        binding.recyclerviewNasaSearch.scrollToPosition(0)
-        binding.recyclerviewMars.scrollToPosition(0)
     }
-}
+
+    private fun floatingButtonUp() {
+        binding.fabScrollTop.setOnClickListener {
+            binding.recyclerviewNasaSearch.scrollToPosition(0)
+            binding.recyclerviewMars.scrollToPosition(0)
+        }
+    }
 
     private fun refreshswipe() {
 
@@ -63,7 +59,6 @@ private fun floatingButton(){
                 adapternasa.submitData(it)
             }
         }
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -96,8 +91,8 @@ private fun floatingButton(){
         adaptermars = RoverPhotosAdapter()
 
         binding.recyclerviewMars.apply {
-        adapter =adaptermars
-        layoutManager = StaggeredGridLayoutManager(2, GridLayoutManager.VERTICAL)
+            adapter = adaptermars
+            layoutManager = StaggeredGridLayoutManager(2, GridLayoutManager.VERTICAL)
             setHasFixedSize(true)
         }
 
@@ -110,11 +105,11 @@ private fun floatingButton(){
 
 
     private fun setUpViewModel() {
-            lifecycleScope.launch {
-                viewModel.marsphotos.collect {
-                    Log.d("aaa", "Data Loaded: $it")
-                    adaptermars.submitData(it)
-                }
+        lifecycleScope.launch {
+            viewModel.marsphotos.collect {
+                Log.d("aaa", "Data Loaded: $it")
+                adaptermars.submitData(it)
             }
         }
     }
+}

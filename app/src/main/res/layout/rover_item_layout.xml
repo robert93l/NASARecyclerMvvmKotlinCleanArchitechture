@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="15dp"
+    android:orientation="vertical"
     app:cardCornerRadius="8dp"
     app:cardElevation="5dp"
-    app:cardMaxElevation="5dp"
-    android:orientation="vertical">
+    app:cardMaxElevation="5dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,10 +23,10 @@
             android:src="@drawable/nasa" />
 
         <TextView
-            android:layout_marginTop="10dp"
             android:id="@+id/camera_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:textStyle="bold|italic">
 
         </TextView>
@@ -44,8 +44,8 @@
             android:id="@+id/rover_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold">
-        </TextView>
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/landing_date"
             android:layout_width="wrap_content"
@@ -53,6 +53,7 @@
             android:textStyle="bold">
 
         </TextView>
+
         <TextView
             android:id="@+id/launch_date"
             android:layout_width="wrap_content"
@@ -60,26 +61,26 @@
             android:textStyle="bold">
 
         </TextView>
+
         <TextView
             android:id="@+id/status"
-            android:textStyle="bold"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textStyle="bold">
 
         </TextView>
 
         <TextView
             android:id="@+id/urk_link"
-            android:textStyle="bold"
-            android:autoLink="web"
-            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:autoLink="web"
+            android:textStyle="bold">
 
         </TextView>
 
     </LinearLayout>
-
 
 
 </androidx.cardview.widget.CardView>

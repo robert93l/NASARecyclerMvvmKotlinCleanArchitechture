@@ -21,10 +21,12 @@ import javax.inject.Named
 
 
 @HiltViewModel
-class RoverViewModel @Inject constructor(private var query:String, @Named("apiServiceMars1") private val apiService1: ApiServiceMars,
-                                         @Named("apiServiceMars2") private val apiService2: ApiServiceMars) : ViewModel() {
+class RoverViewModel @Inject constructor(
+    private var query: String, @Named("apiServiceMars1") private val apiService1: ApiServiceMars,
+    @Named("apiServiceMars2") private val apiService2: ApiServiceMars
+) : ViewModel() {
 
-    val marsphotos = Pager(PagingConfig(pageSize = 20, prefetchDistance =50,)) {
+    val marsphotos = Pager(PagingConfig(pageSize = 20, prefetchDistance = 50)) {
         MarsPagingSource(apiService1)
     }.flow.cachedIn(viewModelScope)
 

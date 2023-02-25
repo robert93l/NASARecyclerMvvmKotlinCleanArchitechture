@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.nasarecyclermvvmkotlincleanarchitechture.R
-import com.example.nasarecyclermvvmkotlincleanarchitechture.data.Photo
+import com.example.nasarecyclermvvmkotlincleanarchitechture.data.rovermars.Photo
 import com.example.nasarecyclermvvmkotlincleanarchitechture.databinding.RoverItemLayoutBinding
 
 
@@ -20,7 +20,8 @@ class RoverPhotosAdapter() :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = RoverItemLayoutBinding.inflate(
-            LayoutInflater.from(parent.context), parent, false)
+            LayoutInflater.from(parent.context), parent, false
+        )
         return ViewHolder(binding)
     }
 
@@ -49,7 +50,8 @@ class RoverPhotosAdapter() :
                 }
 
                 // Update the position of the currently expanded item
-                expandedPosition = if (isExpanded) bindingAdapterPosition else RecyclerView.NO_POSITION
+                expandedPosition =
+                    if (isExpanded) bindingAdapterPosition else RecyclerView.NO_POSITION
             }
         }
 
@@ -97,15 +99,15 @@ class RoverPhotosAdapter() :
 
         }
     }
+}
+
+class DiffUtilCallBack : DiffUtil.ItemCallback<Photo>() {
+    override fun areItemsTheSame(oldItem: Photo, newItem: Photo): Boolean {
+        return oldItem.id == newItem.id
     }
 
-    class DiffUtilCallBack: DiffUtil.ItemCallback<Photo>() {
-        override fun areItemsTheSame(oldItem: Photo, newItem: Photo): Boolean {
-            return oldItem.id == newItem.id
-        }
-
-        override fun areContentsTheSame(oldItem: Photo, newItem: Photo): Boolean {
-            return  oldItem.id == newItem.id
-                    && oldItem.rover.id == oldItem.rover.id
-        }
+    override fun areContentsTheSame(oldItem: Photo, newItem: Photo): Boolean {
+        return oldItem.id == newItem.id
+                && oldItem.rover.id == oldItem.rover.id
     }
+}

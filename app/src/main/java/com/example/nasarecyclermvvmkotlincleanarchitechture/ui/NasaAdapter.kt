@@ -15,7 +15,6 @@ import com.example.nasarecyclermvvmkotlincleanarchitechture.data.nasa.Item
 
 class NasaAdapter() : PagingDataAdapter<Item, NasaAdapter.ViewHolder>(DiffUtilCallBack()) {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_link, parent, false)
@@ -30,8 +29,7 @@ class NasaAdapter() : PagingDataAdapter<Item, NasaAdapter.ViewHolder>(DiffUtilCa
         } else {
             Log.d("Recycler", "Item at position $position is null.")
         }
-
-        }
+    }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val imageNasa: ImageView = view.findViewById(R.id.iv_nasa)
@@ -41,7 +39,7 @@ class NasaAdapter() : PagingDataAdapter<Item, NasaAdapter.ViewHolder>(DiffUtilCa
 
             Glide.with(imageNasa.context)
                 .load(imageUrl)
-                .override(300,300)
+                .override(300, 300)
                 .placeholder(R.drawable.nasa)
                 .into(imageNasa)
 
@@ -49,7 +47,7 @@ class NasaAdapter() : PagingDataAdapter<Item, NasaAdapter.ViewHolder>(DiffUtilCa
     }
 
 
-    class DiffUtilCallBack: DiffUtil.ItemCallback<Item>() {
+    class DiffUtilCallBack : DiffUtil.ItemCallback<Item>() {
         override fun areItemsTheSame(oldItem: Item, newItem: Item): Boolean {
             return oldItem.href == newItem.href
         }

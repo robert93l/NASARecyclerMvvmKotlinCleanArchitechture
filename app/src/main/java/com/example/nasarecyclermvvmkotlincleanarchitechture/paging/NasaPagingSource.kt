@@ -33,7 +33,6 @@ class NasaPagingSource @Inject constructor(
                 Constants.IMAGE
             )
 
-
             if (response.isSuccessful) {
                 val items = response.body()?.collection?.items ?: emptyList()
                 Log.d("NasaPagingSource", "Response data: $items")
