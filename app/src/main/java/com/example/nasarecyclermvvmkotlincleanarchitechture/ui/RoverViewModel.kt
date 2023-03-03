@@ -9,8 +9,6 @@ import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.example.nasarecyclermvvmkotlincleanarchitechture.api.ApiServiceMars
 import com.example.nasarecyclermvvmkotlincleanarchitechture.data.nasa.Item
-import com.example.nasarecyclermvvmkotlincleanarchitechture.data.nasa.Link
-import com.example.nasarecyclermvvmkotlincleanarchitechture.data.nasa.LinkX
 import com.example.nasarecyclermvvmkotlincleanarchitechture.paging.MarsPagingSource
 import com.example.nasarecyclermvvmkotlincleanarchitechture.paging.NasaPagingSource
 import dagger.hilt.android.lifecycle.HiltViewModel

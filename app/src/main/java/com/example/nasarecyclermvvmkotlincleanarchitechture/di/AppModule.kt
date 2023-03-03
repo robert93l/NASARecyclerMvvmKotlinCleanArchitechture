@@ -2,8 +2,6 @@ package com.example.nasarecyclermvvmkotlincleanarchitechture.di
 
 import com.example.nasarecyclermvvmkotlincleanarchitechture.utils.Constants
 import com.example.nasarecyclermvvmkotlincleanarchitechture.api.ApiServiceMars
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,6 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Named
 import javax.inject.Qualifier
 import javax.inject.Singleton
+
 
 
 @Qualifier
@@ -44,9 +43,9 @@ object AppModule {
     @Provides
     @Singleton
     @Named("apiServiceMars2")
-    fun provideRetrofitInstance2(@BaseUrl2 baseUrl: String): ApiServiceMars =
+    fun provideRetrofitInstance2(@BaseUrl2 baseUrl2: String): ApiServiceMars =
         Retrofit.Builder()
-            .baseUrl(baseUrl)
+            .baseUrl(baseUrl2)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ApiServiceMars::class.java)
